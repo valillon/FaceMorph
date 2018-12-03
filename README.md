@@ -42,7 +42,7 @@ $./run_morphing.sh <image1> <image2> <framerate> <duration>
 ## Example
 
 ```bash
-$./run_morphing.sh ./example1/hillary_clinton.jpg ./example1/donald_trump.jpg 30 2
+$./run_morphing.sh ./example/van_gogh.png ./example/paul_goughin.png 30 2
 ```
 
 ## How to create caricatures
@@ -52,9 +52,9 @@ That will transfer the facial expression from one face to the other.
 There are cleaner ways to do it, but a simple one is to comment the line below where landmarks are refreshed.
 
 ```python
-for (f, a) in enumerate(np.linspace(0,100,n_frames)) :	
+for (f, a) in enumerate(np.linspace(0,100,n_frames)) :
 	# some code here
-    # points = []	    # Comment this line to get a cartoon effect          
+	# points = []	    # Comment this line to get a cartoon effect          
 ```
 
 Order 2 frames if you just like to have the cartoon frame:	
