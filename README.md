@@ -1,6 +1,6 @@
 # Face Morphing
 
-![](van_gogh-paul_goughin.gif)
+![](./example/van_gogh-paul_goughin.gif)
 
 This code generates a morphing effect between two faces.		
 1. Facial landmarks recognition in both faces ([Dlib](http://dlib.net)).	
@@ -36,8 +36,8 @@ $./run_morphing.sh <image1> <image2> <framerate> <duration>
 ```
 `image1`: initial image.	
 `image2`: final image.	
-`framerate`: framerate in fps.	
-`duration`: morhping duration in seconds.
+`framerate`: frame-rate in fps.	
+`duration`: morphing duration in seconds.
 
 ## Example
 
@@ -76,9 +76,8 @@ for (f, a) in enumerate(np.linspace(0,100,n_frames)) :
 
 ## How to save the Delaunay triangles.
 
-![](van_gogh_delaunay.jpg)
-![](van_gogh_voronoi.jpg)
-
+![](./example/van_gogh_delaunay.jpg)
+![](./example/van_gogh_voronoi.jpg)
 
 Run the script with the desired image as input.		
 Delaunay and Voronoi segmentations are saved next to the input image.		
