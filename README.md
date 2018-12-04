@@ -27,7 +27,7 @@ $ ./install_morphing_dependencies.sh`
 
 Further installation details for *OpenCV* and *Dlib* in [here](https://www.pyimagesearch.com/2018/01/22/install-dlib-easy-complete-guide/) and [here](https://www.learnopencv.com/install-opencv-3-and-dlib-on-windows-python-only/).
 
-## How to run?
+## How to run
 
 The following script runs the entire pipeline.
 
@@ -74,7 +74,7 @@ for (f, a) in enumerate(np.linspace(0,100,n_frames)) :
     if alpha > 1 :  alpha = 2 - alpha    
 ```
 
-## How to save the Delaunay triangles.
+## How to save the Delaunay triangles
 
 ![](./example/van_gogh_delaunay.jpg)
 ![](./example/van_gogh_voronoi.jpg)
@@ -91,7 +91,7 @@ $ ./python delaunay.py -i <image>
 
 Although *Dlib* is quite robust in most cases, it has its own limitations for detecting facial landmarks.	
 In case that the nose and eyes are not enough visible, face detection may fail.
-It also will fail on detecting non-real faces for instance cartoons, even if they have eyes, nose or mouth.
+It also will fail on detecting non-real faces for instance cartoons, even if they have eyes, nose and mouth.
 
 ---
 	Rafael Redondo, Dec 2018.
