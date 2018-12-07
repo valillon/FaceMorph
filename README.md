@@ -18,14 +18,14 @@ This code is a modification of the code originally posted in this [blog post](ht
 Note that unlike the original code, only the corners and half way points are added to the facial keypoints.	
 The neck and the ears points manually added in the original code have been omitted to make it completely automatic.
 
-## Dependencies for macOS
+## Installation dependencies for macOS and Ubuntu
 
-Run the script or install each therein included library.	 	
+Run the proper script or install each therein included library for your OS `macos` or `ubuntu`.	 	
 ```bash
-$ ./install_morphing_dependencies.sh`
+$ ./install_morphing_dependencies_<myOS>.sh`
 ```
 
-Further installation details for *OpenCV* and *Dlib* in [here](https://www.pyimagesearch.com/2018/01/22/install-dlib-easy-complete-guide/) and [here](https://www.learnopencv.com/install-opencv-3-and-dlib-on-windows-python-only/).
+Further installation details for *OpenCV* and *Dlib* in [here](https://www.pyimagesearch.com/2018/01/22/install-dlib-easy-complete-guide/), [here](https://www.learnopencv.com/install-opencv-3-and-dlib-on-windows-python-only/) and [here](https://www.learnopencv.com/install-dlib-on-ubuntu).
 
 ## How to run
 
@@ -39,7 +39,7 @@ $./run_morphing.sh <image1> <image2> <framerate> <duration>
 `framerate`: frame-rate in fps.	
 `duration`: morphing duration in seconds.
 
-## Example
+### Example
 
 ```bash
 $./run_morphing.sh ./example/van_gogh.png ./example/paul_goughin.png 30 2
