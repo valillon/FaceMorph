@@ -27,23 +27,34 @@ $ ./install_morphing_dependencies_<myOS>.sh`
 
 Further installation details for *OpenCV* and *Dlib* in [here](https://www.pyimagesearch.com/2018/01/22/install-dlib-easy-complete-guide/), [here](https://www.learnopencv.com/install-opencv-3-and-dlib-on-windows-python-only/) and [here](https://www.learnopencv.com/install-dlib-on-ubuntu).
 
-## How to run
+## How to morph between 2 images
 
 The following script runs the entire pipeline.
 
 ```bash
-$./run_morphing.sh <image1> <image2> <framerate> <duration>
+$./run_morphing_with_images.sh <image1> <image2> <framerate> <duration_milis>
 ```
 `image1`: initial image.	
 `image2`: final image.	
 `framerate`: frame-rate in fps.	
-`duration`: morphing duration in seconds.
+`duration`: morphing duration in miliseconds.
 
 ### Example
 
 ```bash
-$./run_morphing.sh ./example/van_gogh.png ./example/paul_goughin.png 30 2
+$./run_morphing_with_images.sh ./example/van_gogh.png ./example/paul_goughin.png 30 2000
 ```
+
+## How to morph between 2 video files
+
+```bash
+$./run_morphing_with_videos.sh <video1> <video2> <framerate>
+```
+`video1`: initial video clip.	
+`video2`: final video clip.	
+`framerate`: frame-rate in fps.		
+
+The shortest video file will determine the duration of the final morphing clip.
 
 ## How to create caricatures
 
@@ -60,7 +71,7 @@ for (f, a) in enumerate(np.linspace(0,100,n_frames)) :
 Order 2 frames if you just like to have the cartoon frame:	
 
 ```bash
-$./run_morphing.sh <image1> <image2> 2 1
+$./run_morphing_with_images.sh <image1> <image2> 2 1000
 ```
 
 ## How to create a loop-back effect

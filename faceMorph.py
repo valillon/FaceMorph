@@ -96,10 +96,12 @@ def get_delaunay_indexes(image, points) :
 if __name__ == '__main__' :
 
     # Input arguments
-    ap = argparse.ArgumentParser()
+    ap = argparse.ArgumentParser(prog='faceMorph')
     ap.add_argument("-i1", "--image1", required=True, help="path to input image 1")
     ap.add_argument("-i2", "--image2", required=True, help="path to input image 2")
-    ap.add_argument("-f", "--nframes", required=True, help="desired number of morphing frames")
+    group = ap.add_mutually_exclusive_group(required=True)
+    group.add_argument("-f", "--nframes", metavar="[> 0]", help="desired number of morphing frames")
+    group.add_argument("-a", "--alpha", metavar="[0-100]", type=int, choices=range(0, 101), help="desired alpha morphing value")
     args = vars(ap.parse_args())
 
     # Output directory
@@ -159,10 +161,19 @@ if __name__ == '__main__' :
     # Delaunay points
     delaunay = get_delaunay_indexes(img1,points1)
 
-    # Number of intermediate frames (morphing frames)
-    n_frames = args["nframes"]
+    # Alpha values
+    alpha_values = []
 
-    for (f, a) in enumerate(np.linspace(0,100,n_frames)) :
+    if args["nframes"] :
+        # Number of intermediate frames (morphing frames)
+        alpha_values = np.linspace(0, 100, int(args["nframes"]))
+
+    else: 
+        # Single alpha morph blending
+        alpha_values = [ float(args["alpha"]) ]
+
+    # Main loop
+    for (f, a) in enumerate(alpha_values) :
 
         alpha = float(a) / 100
         
@@ -197,7 +208,12 @@ if __name__ == '__main__' :
         #cv2.waitKey(0)
 
         # Save morphing frame
-        cv2.imwrite( out_dir1 + '/' + name1 + '-' + name2 + '-' + str(f).zfill(4) + '.png', np.uint8(imgMorph) )
+        index = []
+        if args["nframes"] :
+            index = str(f).zfill(4)
+        else : index = 'a' + str(int(a)).zfill(4)
+
+        cv2.imwrite( out_dir1 + '/morph-' + name1 + '-' + name2 + '-' + index + '.png', np.uint8(imgMorph) )
 
     print('Morphing results exported in ' + out_dir1)
     print('Done!')
