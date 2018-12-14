@@ -22,7 +22,7 @@ The neck and the ears points manually added in the original code have been omitt
 
 Run the proper script or install each therein included library for your OS `macos` or `ubuntu`.	 	
 ```bash
-$ ./install_morphing_dependencies_<myOS>.sh`
+$ ./install/install_morphing_dependencies_<myOS>.sh`
 ```
 
 Further installation details for *OpenCV* and *Dlib* in [here](https://www.pyimagesearch.com/2018/01/22/install-dlib-easy-complete-guide/), [here](https://www.learnopencv.com/install-opencv-3-and-dlib-on-windows-python-only/) and [here](https://www.learnopencv.com/install-dlib-on-ubuntu).

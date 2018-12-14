@@ -46,7 +46,7 @@ for i in $(seq -f "%04g" 1 $numframes ); do
 
 	ii=$(echo $i | sed 's/^0*//')
 	a=$(($ii * 100 / $numframes))
-	echo "${bold}Morphing frame $ii [$a% done]${normal}"
+	echo "${bold}[$a%] Morphing frame $ii${normal}"
 
 	cp $path/$filename1-$i.png $path/$filename1.png
 	cp $path/$filename2-$i.png $path/$filename2.png
@@ -66,7 +66,7 @@ rm $path/*_landmarks.jpg
 rm $path/*.txt
 
 echo "${bold}Generating video file${normal}"
-# ffmpeg -f image2 -framerate $fps -r $fps -start_number 0 -pattern_type glob -i $path/morph-$filename1-$filename2-'*.png' -b:v 10M -pix_fmt yuv420p $path/$filename1-$filename2.mp4 -y
+ffmpeg -f image2 -framerate $fps -r $fps -start_number 0 -pattern_type glob -i $path/morph-$filename1-$filename2-'*.png' -b:v 10M -pix_fmt yuv420p $path/$filename1-$filename2.mp4 -y
 
 echo "Morphing finished!"
 echo "Checkout results in $path/$filename1-$filename2.mp4"
