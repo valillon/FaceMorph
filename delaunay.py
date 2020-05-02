@@ -47,7 +47,7 @@ def draw_voronoi(img, subdiv) :
 
     ( facets, centers) = subdiv.getVoronoiFacetList([])
 
-    for i in xrange(0,len(facets)) :
+    for i in range(0,len(facets)) :
         ifacet_arr = []
         for f in facets[i] :
             ifacet_arr.append(f)
