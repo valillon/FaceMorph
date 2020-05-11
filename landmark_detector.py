@@ -61,7 +61,7 @@ for (i, rect) in enumerate(rects):
     # loop over the (x, y)-coordinates for the facial landmarks
     # and write them on a file
     landmarks_file = out_dir + '/' + name + '.txt'      # overwrites landmarks for images with multiple faces
-    f = open(landmarks_file, 'wb')
+    f = open(landmarks_file, 'w')
     f.truncate(0)                                       # cleaning
     for (x, y) in shape:
         f.write(str(x) + ' ' + str(y) + '\n')
