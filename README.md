@@ -20,7 +20,10 @@ The neck and the ears points manually added in the original code have been omitt
 
 ## Installation dependencies for macOS and Ubuntu
 
-Run the proper script or install each therein included library for your OS `macos` or `ubuntu`.	 Python 2 required.	
+Run the proper script or install each therein included library for your OS `macos` or `ubuntu`.
+
+Python 3 required.	
+
 ```bash
 $ ./install/install_morphing_dependencies_<myOS>.sh`
 ```
